@@ -1,0 +1,24 @@
+<% layout("../layouts/boilerplate.ejs") %>
+
+<h2>Blogs :</h2>
+
+<% for(blog of blogs){ %>
+    <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Company_Name</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"> <i>By <%= blog.author.name %></i> </h6>
+          <p class="card-text"> <%- blog.content %> </p>
+
+          <% if(blog.selectionStatus){ %>
+            Selection Status <i class="fa-solid fa-check"></i>
+          <% } else { %>
+            Selection Status <i class="fa-solid fa-xmark"></i>
+          <% } %>
+
+          <!-- <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+        </div>
+      </div>    
+<% } %>
+
+                                           
